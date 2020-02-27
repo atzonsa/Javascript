@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Progress Bar</title>
+</head>
+
+<body>
+  
+<div class="bar-container">
+    <div class="bar"/>
+</div>
+
+<button onclick='startProgress(2)'>Start Progress</button>
+
+<script>
+
+function startProgress(sec){
+    const bar = document.querySelector('.bar');
+    let percentage = 0;
+    const interval = setInterval(() => {
+        bar.style.width = percentage + "%";
+        percentage++;
+        console.log("status is " + percentage);
+        if (percentage >= 100){
+            clearInterval(interval);
+        }
+    }, (sec * 1000 / 100))
+}
+
+</script>
+
+
+<style>
+body
+{
+    background-color: lightgray;
+}
+
+.bar-container{
+    width: 200px;
+    height: 30px;
+    margin: 40px;
+    background-color: grey;
+}
+    
+.bar{
+    background-color: green;
+    height: 100%;
+    width:0%;
+}
+
+</style>
+
+
+</body>
+</html>
