@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Fruit Order</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+  
+</head>
+
+<body>
+
+<div class="row">
+<div class="col-md-4">
+<h1 class="text-center">Fruit Order</h1>
+</div>
+</div>
+
+ <div class="row margin-top-20">
+ <div class="col-md-2 text-right"><label>Banana</label></div>
+ <div class="col-md-2"><input type="text" id="txtBanana" class="form-control banana" placeholder="Enter Qty"/></div>
+ </div>
+ 
+ <div class="row margin-top-20">
+ <div class="col-md-2 text-right"><label>Apple</label></div> 
+ <div class="col-md-2"><input type="text" id="txtApple" class="form-control apple" placeholder="Enter Qty"/></div>
+ </div> 
+
+<div class="row margin-top-20">
+ <div class="col-md-2 text-right"><label>Orange</label></div>
+ <div class="col-md-2"><input type="text" id="txtOrange" class="form-control orange" placeholder="Enter Qty"/></div>
+ </div> 
+
+ <div class="row margin-top-20">
+ <div class="col-md-2 text-right"><label>Strawberry</label></div>
+ <div class="col-md-2"><input type="text" id="txtStrawberry" class="form-control strawberry" placeholder="Enter Qty"/></div>
+ </div> 
+
+
+ <div class="row margin-top-20">
+ <div class="col-md-2 text-right"><label>Peach</label></div>
+ <div class="col-md-2"><input type="text" id="txtPeach" class="form-control peach" placeholder="Enter Qty"/></div>
+ </div> 
+
+<div class="row margin-top-20">
+<div class="col-md-4"><h2 class="text-center" id="total"></h2>
+</div>
+</div>
+
+<div class="row margin-top-20">
+<div class="offset-md-2 col-md-2"><button onclick="showTotal()">Show Total</button>
+</div>
+</div>
+
+<script>
+    function showTotal()
+    {
+        console.log("clicked");
+        let bananaVal = parseInt(document.getElementById("txtBanana").value)
+        let appleVal = parseInt(document.getElementById("txtApple").value)
+        let orangeVal = parseInt(document.getElementById("txtOrange").value)
+        let strawberryVal = parseInt(document.getElementById("txtStrawberry").value)
+        let peachVal = parseInt(document.getElementById("txtPeach").value)
+
+        bananaVal = (isNaN(bananaVal)) ? 0 : bananaVal;
+        appleVal = (isNaN(appleVal)) ? 0 : appleVal;
+        orangeVal = (isNaN(orangeVal)) ? 0 : orangeVal;
+        strawberryVal = (isNaN(strawberryVal)) ? 0 : strawberryVal;
+        peachVal = (isNaN(peachVal)) ? 0 : peachVal;
+
+        document.getElementById("total").innerHTML = "Your total is " + (bananaVal + appleVal + orangeVal + strawberryVal + peachVal);
+    }
+</script>
+
+
+<style>
+.margin-top-20 {
+    margin-top: 20px
+}
+</style>
+
+</body>
+</html>
